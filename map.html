@@ -18,8 +18,12 @@
     </style>
   </head>
   <body>
+    <p id="title"></p>
     <div id="map"></div>
     <script>
+      // reference to the map in html
+      var map;
+
       // mock api data
       var breweries = [
         {
@@ -27,7 +31,7 @@
             name: "Dallas",
             desciption: "We make 324 beer",
             lat: 32.7767,
-            lon: 96.797
+            lon: -96.797
           }
         },
         {
@@ -35,7 +39,7 @@
             name: "Austin",
             desciption: "We make 23 beer",
             lat: 30.2672,
-            lon: 97.7431
+            lon: -97.7431
           }
         },
         {
@@ -43,17 +47,47 @@
             name: "Houston",
             desciption: "We make 324 beer",
             lat: 29.7604,
-            lon: 95.3698
+            lon: -95.3698
           }
         }
       ];
 
-      var map;
-      function initMap() {
+      // This runs first
+      function init() {
+        document.getElementById("map").textContent = "Loading ...";
+        // calls getLocation
+        getLocation();
+      }
+
+      function getLocation() {
+        //   get location checks to see if you allow geolocation
+        if (navigator.geolocation) {
+          // if so, let's find the user's current position
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          console.log("no geolocation allowed");
+
+          // default lat and lng for center
+          initMap(34.0522, -118.2437);
+        }
+      }
+
+      function showPosition(position) {
+        // the position object has information about the users position
+        // console.log(position) log this out to see what else is on the obj
+
+        // we'll pull off the latitude and longitude from the coordinates
+        const { latitude, longitude } = position.coords;
+        // and pass them into initMap
+        initMap(latitude, longitude);
+      }
+
+      //   this function processes all the google map information
+      function initMap(lat, lon) {
         map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 2,
+          zoom: 13,
           //   set center to appropriate place
-          center: new google.maps.LatLng(2.8, -187.3),
+          center: { lat, lng: lon },
           mapTypeId: "terrain"
         });
 
@@ -83,7 +117,7 @@
     <script
       async
       defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoJpfu65xz3ysT83WdXQB6BrKTBuKLUHc&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoJpfu65xz3ysT83WdXQB6BrKTBuKLUHc&callback=init"
     ></script>
   </body>
 </html>
