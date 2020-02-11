@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -20,7 +24,40 @@
   <body>
     <p id="title"></p>
     <div id="map"></div>
-    <script>
+    <form id="form">
+      <input id="zip" type="text" /><input type="submit" id="submit-btn" />
+    </form>
+<script>
+    
+      // create the on click listener
+      // grab the zip from the input .val().trim()
+
+      // pass that zip to your getBreweries(zip) function
+
+      $("#submit-btn").on("click", function(e) {
+        e.preventDefault();
+        var findZip = $('#zip').val().trim();
+        
+      console.log(findZip);
+
+      })
+      const getBreweries = zipCode => {
+        $.ajax({
+          url: `https://api.yelp.com/v3/businesses/search?term=brewery&location=${zipCode}`,
+          method: "GET",
+          headers: {
+            Authorization:
+              "Bearer bvfT3iWDcpR-4Muk889vmNcivjsGMRCxzB3k1TagHYfLTnUunGHZq5fWVIOSNm6L5dwwzoXTsBmkU42-YT353irMrVF8kdd_kGAUSHLc-0dnINfstgnOCmw7qC0_XnYx"
+          }
+        })
+          .then(function(response) {
+            // do something with the response
+          })
+          .catch(function(e) {
+            console.log(e);
+          });
+      };
+
       // reference to the map in html
       var map;
 
@@ -114,10 +151,12 @@
         });
       }
     </script>
+
     <script
       async
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoJpfu65xz3ysT83WdXQB6BrKTBuKLUHc&callback=init"
     ></script>
+  </script>
   </body>
 </html>
