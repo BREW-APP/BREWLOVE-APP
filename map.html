@@ -36,22 +36,26 @@
 
       $("#submit-btn").on("click", function(e) {
         e.preventDefault();
-        var findZip = $('#zip').val().trim();
-        
-      console.log(findZip);
+        var zipCode = $('#zip').val().trim();
+        getBreweries(zipCode);
+      
 
       })
+
       const getBreweries = zipCode => {
         $.ajax({
-          url: `https://api.yelp.com/v3/businesses/search?term=brewery&location=${zipCode}`,
+          url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=brewery&location=${zipCode}`,
           method: "GET",
           headers: {
-            Authorization:
-              "Bearer bvfT3iWDcpR-4Muk889vmNcivjsGMRCxzB3k1TagHYfLTnUunGHZq5fWVIOSNm6L5dwwzoXTsBmkU42-YT353irMrVF8kdd_kGAUSHLc-0dnINfstgnOCmw7qC0_XnYx"
+            'Authorization':
+              "Bearer bvfT3iWDcpR-4Muk889vmNcivjsGMRCxzB3k1TagHYfLTnUunGHZq5fWVIOSNm6L5dwwzoXTsBmkU42-YT353irMrVF8kdd_kGAUSHLc-0dnINfstgnOCmw7qC0_XnYx",
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true,
           }
         })
           .then(function(response) {
             // do something with the response
+            console.log(response)
           })
           .catch(function(e) {
             console.log(e);
@@ -150,6 +154,8 @@
           });
         });
       }
+
+      
     </script>
 
     <script
