@@ -1,10 +1,96 @@
+var zipcode = $("#searchBar").val();
+
+$("#searchButton").click(function(e){
+  console.log("clicked the search button GO")
+  var zipcode = $("#searchBar").val().trim();
+  console.log(zipcode);
+  getBreweries(zipcode);
+  e.preventDefault();
+
+
+
+//!!!!!!!!!!!!!!!!!!!
+
+
+
+
+      // create the on click listener
+      // grab the zip from the input .val().trim()
+      // pass that zip to your getBreweries(zip) function
+      // $("#submit-btn").on("click", function(e) {
+        // e.preventDefault();
+        // var zipCode = $('#zip').val().trim();
+        // getBreweries(zipCode);
+      
+      // })
+      // const getBreweries = zipCode => {
+      //   $.ajax({
+      //     url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=brewery&location=${zipCode}`,
+      //     method: "GET",
+      //     headers: {
+      //       'Authorization':
+      //         "Bearer bvfT3iWDcpR-4Muk889vmNcivjsGMRCxzB3k1TagHYfLTnUunGHZq5fWVIOSNm6L5dwwzoXTsBmkU42-YT353irMrVF8kdd_kGAUSHLc-0dnINfstgnOCmw7qC0_XnYx",
+      //       'Access-Control-Allow-Origin': '*',
+      //       'Access-Control-Allow-Credentials': true,
+      //     }
+      //   })
+      //     .then(function(response) {
+      //       // do something with the response
+      //       console.log(response)
+      //     })
+      //     .catch(function(e) {
+      //       console.log(e);
+      //     });
+      // };
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+})
+const getBreweries = zipcode => {
+  $.ajax({
+    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=brewery&location=${zipcode}`,
+    method: "GET",
+    headers: {
+      'Authorization':
+        "Bearer bvfT3iWDcpR-4Muk889vmNcivjsGMRCxzB3k1TagHYfLTnUunGHZq5fWVIOSNm6L5dwwzoXTsBmkU42-YT353irMrVF8kdd_kGAUSHLc-0dnINfstgnOCmw7qC0_XnYx",
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+    }
+  })
+    .then(function(response) {
+      console.log(response);
+      // do something with the response
+      console.log(response.businesses[0].alias)
+      $("#listItem0").text(response.businesses[0].name);
+      console.log(response.businesses[1].name)
+      $("#listItem1").text(response.businesses[1].name);
+      console.log(response.businesses[2].name)
+      $("#listItem2").text(response.businesses[2].name);
+    })
+    .catch(function(e) {
+      console.log(e);
+    });
+};
+
+
+// THIS IS ALL THE STUFF PERTAINING TO THE GOOGLE MAP DISPLAY YO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// reference to the map in html
 init();
-function clickedButton(){
-    console.log("clicked the search btn..")
+var map = document.getElementById("mapDisplay");
+
+// This runs first
+function init() {
+  console.log("initialized the script...")
+  document.getElementById("mapDisplay").textContent = "Loading ...";
+  // calls getLocation
+  getLocation();
 }
 
 // reference to the map in html
-var map = document.getElementById("mapDisplay");
+var map;
 
 // mock api data
 var breweries = [
@@ -34,18 +120,12 @@ var breweries = [
   }
 ];
 
-// This runs first
-function init() {
-  console.log("initialized da script...")
-  document.getElementById("mapDisplay").textContent = "Loading ...";
-  // calls getLocation
-  getLocation();
-}
 
 function getLocation() {
   //   get location checks to see if you allow geolocation
   if (navigator.geolocation) {
     // if so, let's find the user's current position
+    console.log("eagle mode. ")
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
     console.log("no geolocation allowed");
@@ -71,7 +151,7 @@ function initMap(lat, lon) {
     zoom: 13,
     //   set center to appropriate place
     center: { lat, lng: lon },
-    mapTypeId: "terrain"
+    // mapTypeId: "terrain"
   });
 
   // after ajax .then once you have the response from the api
@@ -96,4 +176,4 @@ function initMap(lat, lon) {
     });
   });
 }
-
+//THIS CONCLUDES ALL THE STUFF PERTAINING TO THE MAP DISPLAY API !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
