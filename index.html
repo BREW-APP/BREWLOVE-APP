@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BREW LOVE APP</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" ></script>
     <!-- <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/app.css" /> -->
     <link rel="stylesheet" href="style.css">
@@ -32,8 +33,8 @@
             <div class="grid-x grid-padding-x">
               <div class="large-12 cell">
                 
-                <br><input type="text" id="seaerchBar" class="searchBar" placeholder="type your zipcode" /><br><br>
-                <a href="#searchBtn" onclick="clickedButton()" class="searchButton">SEARCH</a>
+                <br><input type="text" id="searchBar" class="searchBar" placeholder="type your zipcode" /><br><br>
+                <a href="#searchBtn" id="searchButton" class="searchButton">SEARCH</a>
               </div>
             </div>
           </form>
@@ -61,13 +62,16 @@
           
           <div class="grid-x grid-padding-x">
 
-            <ol class="foundBreweries">
-              <li class="listItem">Brewerie A</li>
-              <li class="listItem">Brewerie B</li>
-              <li class="listItem">Brewerie C</li>
-            </ol>
+            <ul class="foundBreweries">
+              <li class="listItem" id="listItem0"></li>
+              <li class="listItem" id="listItem1"></li>
+              <li class="listItem" id="listItem2"></li>
+            </ul>
 
           </div>
+
+          <div> <h4 id="dadJokes">What do you call an eagle doctor? a doctor mario explorer</h4></div>
+
           <div class="container">
             <div class="footerContainer">
               <footer class="footerText">App created Chinami Iihama, Robert Gaerlan, Sydney Krantz, and Kaden Maguglin.</footer>
