@@ -6,8 +6,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BREW LOVE APP</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <!-- <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" /> -->
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="wholeContainer">
@@ -31,8 +32,8 @@
             <div class="grid-x grid-padding-x">
               <div class="large-12 cell">
                 
-                <br><input type="text" class="searchBar" placeholder="type your zipcode" /><br><br>
-                <a href="#searchBtn" class="searchButton">SEARCH</a>
+                <br><input type="text" id="seaerchBar" class="searchBar" placeholder="type your zipcode" /><br><br>
+                <a href="#searchBtn" onclick="clickedButton()" class="searchButton">SEARCH</a>
               </div>
             </div>
           </form>
@@ -49,9 +50,9 @@
           <div class="grid-x grid-padding-x">
             <div class="large-12 cell">
               <div class="primary callout">
-                <div class="mapDisplay">
+                <div id="mapDisplay" class="mapDisplay">
 
-                  <p class="mapDisplayText"><strong>THIS IS WHERE THE GOOGLE MAP API COMES INTO PALY DISPLAYING BREWS NEAR YOU.</strong></p>
+                  THIS IS WHERE THE GOOGLE MAP API COMES INTO PALY DISPLAYING BREWS NEAR YOU.
                  
                 </div>
               </div>
@@ -81,7 +82,7 @@
     </div>
   </div>
 </div>
-    <script src="js/vendor/jquery.js"></script>
+    <!-- <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
@@ -94,9 +95,9 @@
     src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js"
     integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
     crossorigin="anonymous"
-  ></script>
+  ></script> --> 
   <script src="./script.js"></script>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoJpfu65xz3ysT83WdXQB6BrKTBuKLUHc&callback=init"></script>
   </body>
 </html>
 
