@@ -70,17 +70,21 @@ ul {
   padding-top: 100px;
 }
 
-.foundBreweries {
-  background-color: white;
-  border: 2px solid black;
-  width: 30%;
-  margin-right: 35%;
-  margin-left: 35%;
-  font-size: 20px;
+.resultsContainer{
+    background-color:white;
+    border: 2px solid black;
+    width: 80%;
+    margin-right:10%;
+    margin-left: 10%;
 }
 
-#dadJokes {
-  text-align: center;
-  background-color: white;
-  border: 2px solid black;
+#dadJokes{
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.thumbnail{
+    height: 100px;
+    width: 100px;
 }
