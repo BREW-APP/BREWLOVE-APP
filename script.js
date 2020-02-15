@@ -183,6 +183,6 @@ function initMap(lat, lon) {
 
 //dad joke code..
 function displayDadJoke(){
-  console.log("and also here's a random dad joke LOL")
+  console.log("and also here's a random dad joke... LOL")
   $("#dadJokes").text("I bought some shoes from a drug dealer. I don't know what he laced them with, but I was tripping all day!")
 }
