@@ -22,8 +22,7 @@ $(document).keyup(function(e) {
 
 document.getElementById("no").onclick = function() {
   if (this.checked) {
-    location.href =
-      "https://3.bp.blogspot.com/-FzoQl3NKyKs/VjN4QasIZpI/AAAAAAAAAIA/ZajN2vS2vO4/s1600/Meme.jpg";
+    location.href = "Ud.jpeg";
   }
 };
 

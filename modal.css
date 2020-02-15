@@ -1,7 +1,10 @@
-body {
-  background: url(https://i.pinimg.com/originals/77/44/7f/77447f8f5a213c5e37798665bac1f42f.jpg)
-    no-repeat;
-  background-size: 1920px 1100px;
+body,
+html {
+  background: url(MBG.jpg) repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
   position: static;
 }
 
