@@ -151,21 +151,21 @@ function initMap(lat, lon) {
   // Loop through the results array and place a marker for each
   // set of coordinates.
   // --- TRIED TO ADD MARKERS --
-  // breweries.forEach(brewery => {
-  //   console.log(brewery);
-  //   var latLng = new google.maps.LatLng(brewery.city.lat, brewery.city.lon);
-  //   var marker = new google.maps.Marker({
-  //     position: latLng,
-  //     map: map,
-  //     title: "Uluru (Ayers Rock)"
-  //   });
-  //   var infowindow = new google.maps.InfoWindow({
-  //     content: brewery.city.desciption
-  //   });
-  //   marker.addListener("click", function() {
-  //     infowindow.open(map, marker);
-  //   });
-  // });
+  breweries.forEach(brewery => {
+    console.log(brewery);
+    var latLng = new google.maps.LatLng(brewery.city.lat, brewery.city.lon);
+    var marker = new google.maps.Marker({
+      position: latLng,
+      map: map,
+      title: "Uluru (Ayers Rock)"
+    });
+    var infowindow = new google.maps.InfoWindow({
+      content: brewery.city.desciption
+    });
+    marker.addListener("click", function() {
+      infowindow.open(map, marker);
+    });
+  });
 }
 //THIS CONCLUDES ALL THE STUFF PERTAINING TO THE MAP DISPLAY API !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
