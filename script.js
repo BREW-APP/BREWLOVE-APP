@@ -64,6 +64,10 @@ const getBreweries = zipcode => {
       $("#listItem1").text(response.businesses[1].name);
       console.log(response.businesses[2].name);
       $("#listItem2").text(response.businesses[2].name);
+      console.log(response.businesses[3].name);
+      $("#listItem3").text(response.businesses[3].name);
+      console.log(response.businesses[4].name);
+      $("#listItem4").text(response.businesses[4].name);
     })
     .catch(function(e) {
       console.log(e);
