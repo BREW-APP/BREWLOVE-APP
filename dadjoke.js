@@ -1,3 +1,5 @@
+//THIS IS A COMMENT MADE BY KADEN - THIS FILE IS BASICALLY DEFUNCT. DONT DELETE THO.  
+
 const jokeEl = document.getElementById("joke");
 // need #joke
 const get_joke = document.getElementById("get_joke");
