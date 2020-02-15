@@ -1,4 +1,3 @@
-  
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
   <head>
@@ -6,8 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BREW LOVE APP</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" ></script>
+    <!-- <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" /> -->
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -32,8 +32,8 @@
             <div class="grid-x grid-padding-x">
               <div class="large-12 cell">
                 
-                <br><input type="text" id="seaerchBar" class="searchBar" placeholder="type your zipcode" /><br><br>
-                <a href="#searchBtn" onclick="clickedButton()" class="searchButton">SEARCH</a>
+                <br><input type="text" id="searchBar" class="searchBar" placeholder="type your zipcode" /><br><br>
+                <a href="#searchBtn" id="searchButton" class="searchButton">SEARCH!</a>
               </div>
             </div>
           </form>
@@ -58,16 +58,54 @@
               </div>
             </div>
           </div>
-          
+          <br>
           <div class="grid-x grid-padding-x">
+          <div class="resultsContainer">
 
-            <ol class="foundBreweries">
-              <li class="listItem">Brewerie A</li>
-              <li class="listItem">Brewerie B</li>
-              <li class="listItem">Brewerie C</li>
-            </ol>
+            <div class="resultDisplay">
+              <img class="thumbnail" id="thumbnail0">
+              <a target="_blank" id="listItemLink0"><h4 class="listItem" id="listItem0"></h4></a>
+              <h4 class="listItem" id="result0Address"></h4>
+              <h4 class="listItem" id="result0PhoneNumber"></h4>
+            </div>
+
+            <div class="resultDisplay">
+              <img class="thumbnail" id="thumbnail1">
+              <a target="_blank" id="listItemLink1"><h4 class="listItem" id="listItem1"></h4></a>
+              <h4 class="listItem" id="result1Address"></h4>
+              <h4 class="listItem" id="result1PhoneNumber"></h4>
+              <h4 class="listItem" id="resultLink1"></h4>
+            </div>
+
+            <div class="resultDisplay">
+              <img class="thumbnail" id="thumbnail2">
+              <a target="_blank" id="listItemLink2"><h4 class="listItem" id="listItem2"></h4></a>
+              <h4 class="listItem" id="result2Address"></h4>
+              <h4 class="listItem" id="result2PhoneNumber"></h4>
+              <h4 class="listItem" id="resultLink2"></h4>
+            </div>
+
+            <div class="resultDisplay">
+              <img class="thumbnail" id="thumbnail3">
+              <a target="_blank" id="listItemLink3"><h4 class="listItem" id="listItem3"></h4></a>
+              <h4 class="listItem" id="result3Address"></h4>
+              <h4 class="listItem" id="result3PhoneNumber"></h4>
+              <h4 class="listItem" id="resultLink3"></h4>
+            </div>
+
+            <div class="resultDisplay">
+              <img class="thumbnail" id="thumbnail4">
+              <a target="_blank" id="listItemLink4"><h4 class="listItem" id="listItem4"></h4></a>
+              <h4 class="listItem" id="result4Address"></h4>
+              <h4 class="listItem" id="result4PhoneNumber"></h4>
+              <h4 class="listItem" id="resultLink4"></h4>
+            </div>
 
           </div>
+          </div>
+
+          <div> <h4 id="dadJokes"></h4></div>
+
           <div class="container">
             <div class="footerContainer">
               <footer class="footerText">App created Chinami Iihama, Robert Gaerlan, Sydney Krantz, and Kaden Maguglin.</footer>

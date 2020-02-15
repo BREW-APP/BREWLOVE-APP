@@ -1,7 +1,9 @@
 var zipcode = $("#searchBar").val();
+$(".thumbnail").hide();
+
 
 $("#searchButton").click(function(e){
-
+  $(".thumbnail").show();
   displayDadJoke();
 
   console.log("clicked the search button GO")
@@ -66,14 +68,40 @@ const getBreweries = zipcode => {
     .then(function(response) {
       console.log(response);
       // do something with the response
+      console.log(response.businesses[0].url)
       console.log(response.businesses[0].alias)
+      $("#thumbnail0").attr("src", response.businesses[0].image_url)
       $("#listItem0").text(response.businesses[0].name);
+      $("#listItemLink0").attr("href", response.businesses[0].url);
+      $("#result0Address").text(response.businesses[0].location.display_address)
+      $("#result0PhoneNumber").text(response.businesses[0].display_phone)
       console.log(response.businesses[1].name)
+      $("#thumbnail1").attr("src", response.businesses[1].image_url)
       $("#listItem1").text(response.businesses[1].name);
+      $("#listItemLink1").attr("href", response.businesses[0].url);
+      $("#result1Address").text(response.businesses[1].location.display_address)
+      $("#result1PhoneNumber").text(response.businesses[1].display_phone)
       console.log(response.businesses[2].name)
+      $("#thumbnail2").attr("src", response.businesses[2].image_url)
       $("#listItem2").text(response.businesses[2].name);
+      $("#listItemLink2").attr("href", response.businesses[0].url);
+      $("#result2Address").text(response.businesses[2].location.display_address)
+      $("#result2PhoneNumber").text(response.businesses[2].display_phone)
+      console.log(response.businesses[3].name)
+      $("#thumbnail3").attr("src", response.businesses[3].image_url)
+      $("#listItem3").text(response.businesses[3].name);
+      $("#listItemLink3").attr("href", response.businesses[0].url);
+      $("#result3Address").text(response.businesses[3].location.display_address)
+      $("#result3PhoneNumber").text(response.businesses[3].display_phone)
+      console.log(response.businesses[4].name)
+      $("#thumbnail4").attr("src", response.businesses[4].image_url)
+      $("#listItem4").text(response.businesses[4].name);
+      $("#listItemLink4").attr("href", response.businesses[0].url);
+      $("#result4Address").text(response.businesses[4].location.display_address)
+      $("#result4PhoneNumber").text(response.businesses[4].display_phone)
     })
     .catch(function(e) {
+      console.log("HERE IS THE RESPONSE URL" + response.businesses[0].url);
       console.log(e);
     });
 };
