@@ -1,78 +1,127 @@
-body{
-    background-color: lightcoral;
+body {
+  background-color: lightcoral;
 }
 
-.navBarIcon{
-    height: 100px;
-    width: 20%;
-}.mainIcon{
-    height:100px;
-    width: 40%;
+.navBarIcon {
+  height: 100px;
+  width: 20%;
+}
+.mainIcon {
+  height: 100px;
+  width: 40%;
 }
 
-.searchBar{
-height:30px;
-border: 2px solid black;
-width:40%;
-margin-right:30%;
-margin-left:30%;
-}.searchButton{
-    background-color:white;
-    width:30%;
-    margin-right:35%;
-    margin-left:35%;
-    padding: 5px 5px 5px 5px;
-    border: 2px solid black;
+.searchBar {
+  height: 30px;
+  border: 2px solid black;
+  width: 40%;
+  margin-right: 30%;
+  margin-left: 30%;
+}
+.searchButton {
+  background-color: white;
+  width: 30%;
+  margin-right: 35%;
+  margin-left: 35%;
+  padding: 5px 5px 5px 5px;
+  border: 2px solid black;
 }
 
-.headContainer{
-    background-color: blue;
-    border-bottom: 3px solid black;
-}.footerContainer{
-    background-color: blue;
-    border-top: 3px solid black;
-}.footerText{
-    color:white;
-    text-align: center;
+.headContainer {
+  background-color: blue;
+  border-bottom: 3px solid black;
+}
+.footerContainer {
+  background-color: blue;
+  border-top: 3px solid black;
+}
+.footerText {
+  color: white;
+  text-align: center;
 }
 
-.pageTitle{
-    font-size: 50px;
+.pageTitle {
+  font-size: 50px;
 }
 
-.wholeContainer{
-    background-color:red;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    border: 3px solid black;
+.wholeContainer {
+  background-color: red;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 3px solid black;
 }
 
-.mapDisplay{
-    border-radius:1%;
-    margin-top:20px;
-    border: 2px solid black;
-    width:80%;
-    height: 600px;
-    margin-right:10%;
-    margin-left:10%;
-    background-color:white;
-}.mapDisplayText{
-    padding-left:30px;
-    padding-top:100px;
+.mapDisplay {
+  border-radius: 1%;
+  margin-top: 20px;
+  border: 2px solid black;
+  width: 80%;
+  height: 600px;
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color: white;
+}
+.mapDisplayText {
+  padding-left: 30px;
+  padding-top: 100px;
 }
 
-.foundBreweries{
-    background-color:white;
-    border: 2px solid black;
-    width: 30%;
-    margin-right: 35%;
-    margin-left: 35%;
-    font-size:20px;
+.foundBreweries {
+  background-color: white;
+  border: 2px solid black;
+  width: 30%;
+  margin-right: 35%;
+  margin-left: 35%;
+  font-size: 20px;
 }
 
-#dadJokes{
-    text-align: center;
-    background-color: white;
-    border: 2px solid black;
+/* dad joke stuff */
+
+#dadJokes {
+  text-align: center;
+  background-color: white;
+  border: 2px solid black;
+}
+* {
+  box-sizing: border-box;
+}
+/* body {
+  background-color: #686de0;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+} */
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+}
+
+.joke {
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.btn {
+  background-color: #9f68e0;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 14px 40px;
 }
