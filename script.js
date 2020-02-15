@@ -1,6 +1,9 @@
 var zipcode = $("#searchBar").val();
 
 $("#searchButton").click(function(e){
+
+  displayDadJoke();
+
   console.log("clicked the search button GO")
   var zipcode = $("#searchBar").val().trim();
   console.log(zipcode);
@@ -177,3 +180,9 @@ function initMap(lat, lon) {
   });
 }
 //THIS CONCLUDES ALL THE STUFF PERTAINING TO THE MAP DISPLAY API !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//dad joke code..
+function displayDadJoke(){
+  console.log("and also here's a random dad joke LOL")
+  $("#dadJokes").text("I bought some shoes from a drug dealer. I don't know what he laced them with, but I was tripping all day!")
+}
