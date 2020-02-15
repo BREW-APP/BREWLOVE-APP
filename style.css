@@ -1,65 +1,73 @@
-body{
-    background-color: lightcoral;
+body {
+  background-color: lightcoral;
 }
 
-.navBarIcon{
-    height: 100px;
-    width: 20%;
-}.mainIcon{
-    height:100px;
-    width: 40%;
+.navBarIcon {
+  height: 100px;
+  width: 20%;
+}
+.mainIcon {
+  height: 100px;
+  width: 40%;
 }
 
-.searchBar{
-height:30px;
-border: 2px solid black;
-width:40%;
-margin-right:30%;
-margin-left:30%;
-}.searchButton{
-    background-color:white;
-    width:30%;
-    margin-right:35%;
-    margin-left:35%;
-    padding: 5px 5px 5px 5px;
-    border: 2px solid black;
+ul {
+  list-style: none;
+}
+.searchBar {
+  height: 30px;
+  border: 2px solid black;
+  width: 40%;
+  margin-right: 30%;
+  margin-left: 30%;
+}
+.searchButton {
+  background-color: white;
+  width: 30%;
+  margin-right: 35%;
+  margin-left: 35%;
+  padding: 5px 5px 5px 5px;
+  border: 2px solid black;
 }
 
-.headContainer{
-    background-color: blue;
-    border-bottom: 3px solid black;
-}.footerContainer{
-    background-color: blue;
-    border-top: 3px solid black;
-}.footerText{
-    color:white;
-    text-align: center;
+.headContainer {
+  background-color: blue;
+  border-bottom: 3px solid black;
+}
+.footerContainer {
+  background-color: blue;
+  border-top: 3px solid black;
+}
+.footerText {
+  color: white;
+  text-align: center;
 }
 
-.pageTitle{
-    font-size: 50px;
+.pageTitle {
+  font-size: 50px;
 }
 
-.wholeContainer{
-    background-color:red;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    border: 3px solid black;
+.wholeContainer {
+  background-color: red;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 3px solid black;
 }
 
-.mapDisplay{
-    border-radius:1%;
-    margin-top:20px;
-    border: 2px solid black;
-    width:80%;
-    height: 600px;
-    margin-right:10%;
-    margin-left:10%;
-    background-color:white;
-}.mapDisplayText{
-    padding-left:30px;
-    padding-top:100px;
+.mapDisplay {
+  border-radius: 1%;
+  margin-top: 20px;
+  border: 2px solid black;
+  width: 80%;
+  height: 600px;
+  margin-right: 10%;
+  margin-left: 10%;
+  background-color: white;
+}
+.mapDisplayText {
+  padding-left: 30px;
+  padding-top: 100px;
 }
 
 .resultsContainer{
