@@ -1,16 +1,39 @@
 var zipcode = $("#searchBar").val();
-$(".thumbnail").hide();
+const jokeE1 = document.getElementById("dadJokes");
 
+$(".resultsContainer").hide();
+$("#dadJokes").hide();
+$("#jokeButton").click(function(){
+  console.log("ay g u want a dad joke :>")
+  displayDadJoke();
+})
 
 $("#searchButton").click(function(e){
-  $(".thumbnail").show();
-  displayDadJoke();
+  $(".resultsContainer").show();
+ 
 
   console.log("clicked the search button GO")
   var zipcode = $("#searchBar").val().trim();
   console.log(zipcode);
   getBreweries(zipcode);
   e.preventDefault();
+
+  //uh trying to get the lat lon from da zippy...
+  var queryURL = "https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/Vt32WkzfKroF1XG9RY4ZvTY3gT1sJTR1MqWGOIxWUg8ZMc57gg6mOPzvLsZ5SFhI/info.json/" + zipcode + "/radians"
+  $.ajax({
+    url: queryURL,
+    crossDomain: true,
+    headers: {"Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Credentials": true,},
+    type: "GET"
+  }).then(function(response) {
+    
+
+    console.log(response.lat);
+    console.log(response.lng);
+  });
+  //done with that ... 
+
 
 })
 const getBreweries = zipcode => {
@@ -168,8 +191,20 @@ function initMap(lat, lon) {
 }
 //THIS CONCLUDES ALL THE STUFF PERTAINING TO THE MAP DISPLAY API !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-//dad joke code..
-function displayDadJoke(){
-  console.log("and also here's a random dad joke... LOL")
-  $("#dadJokes").text("I bought some shoes from a drug dealer. I don't know what he laced them with, but I was tripping all day!")
+
+
+
+
+
+async function displayDadJoke() {
+  $("#dadJokes").show();
+  console.log("here's yer dad joke G")
+  const jokeRes = await fetch("https://icanhazdadjoke.com/", {
+    headers: {
+      Accept: "application/json"
+    }
+  });
+  const joke = await jokeRes.json();
+console.log(joke.joke)
+  $("#dadJokes").text(joke.joke);
 }
