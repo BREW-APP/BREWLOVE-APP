@@ -6,6 +6,14 @@ html {
   background-size: cover;
   height: 100%;
   position: static;
+  font-family: "Sriracha", cursive;
+  color: yellow;
+}
+
+.h1 {
+  text-align: center;
+
+  text-transform: capitalize;
 }
 
 .show {
@@ -79,4 +87,9 @@ html {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+}
+
+.headContainer {
+  background-color: black;
+  text-align: center;
 }
