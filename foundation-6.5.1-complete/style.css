@@ -133,3 +133,8 @@ margin-left:30%;
 }.listItem{
     font-size:20px;
 }
+
+.mapPlaceHolderText{
+    text-align: center;
+    font-size:60px;
+}
